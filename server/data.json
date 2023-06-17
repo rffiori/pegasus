@@ -1,6 +1,46 @@
 {
-  "test": {
-    "id": 1,
-    "name": "test"
-  }
+  "pricing": [
+    {
+      "id": 1,
+      "name": "Plan Basic",
+      "price": "$9/month",
+      "priceLabel": "Good starting point",
+      "tags": [],
+      "options": [
+        { "title": "All standard elements included", "included": true },
+        { "title": "Over 1800 Components", "included": true },
+        { "title": "Best Figma techniques", "included": true },
+        { "title": "Up to 10 design editors", "included": false },
+        { "title": "Email support", "included": false }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Plan Team",
+      "price": "$19/month",
+      "priceLabel": "Good starting point",
+      "tags": ["Most Popular"],
+      "options": [
+        { "title": "All standard elements included", "included": true },
+        { "title": "Over 1800 Components", "included": true },
+        { "title": "Best Figma techniques", "included": true },
+        { "title": "Up to 10 design editors", "included": true },
+        { "title": "Email support", "included": true }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Plan Company",
+      "price": "$29/month",
+      "priceLabel": "Good starting point",
+      "tags": [],
+      "options": [
+        { "title": "All standard elements included", "included": true },
+        { "title": "Over 1800 Components", "included": true },
+        { "title": "Best Figma techniques", "included": true },
+        { "title": "Up to 10 design editors", "included": true },
+        { "title": "Email support", "included": true }
+      ]
+    }
+  ]
 }
