@@ -1,0 +1,38 @@
+<p-card>
+    <div class="flex flex-column align-items-center">
+        <img src="assets/star.svg" alt="" />
+        <p class="text-primary text-xl font-semibold mt-4 mb-0">{{ pricing?.name }}</p>
+        <p class="text-6xl font-bold text-900 mt-2 mb-2">{{ pricing?.price }}</p>
+        <p class="text-base text-500 m-0">{{ pricing?.priceLabel }}</p>
+        <ul class="mt-4 mb-0">
+            <ng-container *ngFor="let tag of pricing?.tags">
+                <li class="list-none">
+                    <p-tag [value]="tag" [rounded]="true"></p-tag>
+                </li>
+            </ng-container>
+        </ul>
+        <p-divider class="w-full"></p-divider>
+    </div>
+    <ul class="m-0 py-0">
+        <ng-container *ngFor="let option of pricing?.options">
+            <li class="list-none flex align-items-center mb-4">
+                <span class="w-2rem h-2rem text-center">
+                    <ng-container *ngIf="option?.included; else uncheck">
+                        <img src="assets/check.svg" alt="option included" class="w-2rem h-2rem" />
+                    </ng-container>
+                    <ng-template #uncheck>
+                        <img src="assets/uncheck.svg" alt="option not included" class="w-1rem" />
+                    </ng-template>
+                </span>
+                <span class="ml-3">{{ option?.title }}</span>
+            </li>
+        </ng-container>
+    </ul>
+    <div class="p-fluid">
+        <p-button
+            label="Get Started"
+            aria-label="Get Started"
+            styleClass="{{ !pricing?.tags?.length ? 'bg-blue-50 text-primary-500 border-blue-50' : '' }}"
+        ></p-button>
+    </div>
+</p-card>
