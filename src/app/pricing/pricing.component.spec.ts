@@ -1,21 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MockBuilder, MockProvider, MockRender, ngMocks } from 'ng-mocks';
 import { PricingComponent } from './pricing.component';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { PricingCardComponent } from './components/pricing-card/pricing-card.component';
 
 describe('PricingComponent', () => {
-    let component: PricingComponent;
-    let fixture: ComponentFixture<PricingComponent>;
+    ngMocks.faster();
 
     beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [PricingComponent],
-        });
-        fixture = TestBed.createComponent(PricingComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
+        return MockBuilder(PricingComponent, [CommonModule, PricingCardComponent]).provide(MockProvider(ActivatedRoute));
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        const fixture = MockRender(PricingComponent);
+        expect(fixture.point.componentInstance).toBeDefined();
     });
 });
