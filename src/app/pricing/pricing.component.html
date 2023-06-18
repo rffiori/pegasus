@@ -1,6 +1,6 @@
 <div class="relative z-0">
-    <img src="assets/bg.png" alt="" class="absolute" style="height: 717px; width: 100%" />
-    <img src="assets/bg-1.png" alt="" class="absolute" style="height: 733px; width: 100%" />
+    <img src="assets/bg.png" alt="" class="absolute bg-first-layer" />
+    <img src="assets/bg-1.png" alt="" class="absolute bg-second-layer" />
 </div>
 <div class="flex flex-column align-items-center relative justify-content-center z-1 mx-3 text-center">
     <p class="uppercase text-100 font-medium text-xs">pricing plans</p>
@@ -8,7 +8,7 @@
     <h2 class="text-lg font-normal mb-6 md:mb-8 text-100">
         The informative, and brief subheading that builds the interest around the created product. The copy encourages user to discover it
     </h2>
-    <ul class="grid gap-4 mx-3">
+    <ul class="grid gap-4 md:mx-3">
         <ng-container *ngFor="let pricing of pricing$ | async">
             <li class="list-none mb-4 mdcol flex-1">
                 <pegasus-pricing-card [pricing]="pricing"></pegasus-pricing-card>
